@@ -32,7 +32,7 @@ import java.util.*;
         d2 = d2 + borrow;
         
         
-        if (n2>=n1){
+        if (d2>=d1){
             borrow=0;
              d = d2-d1;
             
