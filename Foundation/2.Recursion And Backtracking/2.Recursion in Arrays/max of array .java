@@ -19,20 +19,22 @@ public class Main {
     }
 
     public static int maxOfArray(int[] arr, int idx){
+        
+        //last element 
         if (idx==arr.length-1){
             return arr[idx];
         }
-        int max=0;
-        int max1 = arr[idx];
+        // pushing in stack 
         int max2=maxOfArray(arr,idx+1);
-        if (max1>max2){
-            max=max1;
+        //comparing last and second last
+        if (arr[idx]>max2){
+            return arr[idx];
         }
         else{
-            max=max2;
+            return max2;
         }
         
-        return max;
+
     }
 
 }
