@@ -15,26 +15,30 @@ public class Main {
         }
         
         int x = scn.nextInt();
-        int ans = lastIndex(arr,arr.length-1,x);
+        int ans = lastIndex(arr,0,x);
         System.out.println(ans);
     }
 
-    public static int lastIndex(int[] arr, int idx, int x){
-     //initially idx is at last index before pushing and after poping also it 
-     //will return to last index
-        if (idx==-1){
-            return -1;
-        }
-    // we have to first go to 0 th index and then update till the last index
-    
-            int fi = lastIndex(arr,idx-1,x);
-            if(arr[idx]==x){
-                return idx;
-            }
-            else{
-                return fi;
-            }
-        
+    public static int lastIndex(int[] arr, int taara, int x){
+        //taara is my index
+     if (taara ==arr.length){
+         return -1;
+     }
+     int lisa = lastIndex(arr,taara+1,x);
+     // when you reach the last start comparing
+     if (lisa == -1){
+         if (arr[taara]==x){
+             return taara;
+         }
+         else{
+             return -1;
+         }
+         
+     }// outer if closed 
+     
+     else{
+     return lisa;
+     }
+     
     }
-
 }
