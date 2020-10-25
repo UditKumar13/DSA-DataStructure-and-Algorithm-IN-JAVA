@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Scanner scn = new Scanner(System.in);
-        String que = scn.next();
+        String que = scn.nextLine();
         printSS(que,"");
         //que : abc 
 
