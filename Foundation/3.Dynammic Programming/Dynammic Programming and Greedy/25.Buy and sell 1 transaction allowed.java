@@ -26,11 +26,11 @@ public class Main {
         int least = prices[0];
         
         for (int i=1;i<prices.length;i++){
-            if (least>=prices[i]){
+            if (least>prices[i]){
                 least = prices[i];
             }
             int profit = prices[i] -least ;
-            if (max_profit <= profit ){
+            if (max_profit < profit ){
                 max_profit = profit;
             }
             
