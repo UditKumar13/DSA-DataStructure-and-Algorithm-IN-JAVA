@@ -21,7 +21,7 @@ public class Main {
       // write your code here
       
       
-      if (mainQ.size()>=1){
+      
        while (mainQ.size()>0){
            // for two element 
           helperQ.add(mainQ.remove());
@@ -33,11 +33,8 @@ public class Main {
       mainQ.add(helperQ.remove());    
       }
       
-      }
-      // no ele in mainQ till now
-      else{
-          mainQ.add(val);
-      }
+      
+      
       
       
       
