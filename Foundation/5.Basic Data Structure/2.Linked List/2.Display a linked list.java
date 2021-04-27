@@ -51,13 +51,13 @@ public class Main {
           return;
       }
       else{
-          while(temp.next !=null){
+          while(temp!=null){
               System.out.print(temp.data + " ");
               temp = temp.next ;
               
           }
           
-          System.out.print(temp.data);
+          
           System.out.println();
       }
     }
