@@ -91,27 +91,35 @@ public class Main {
     System.out.println("Node Post " + node.data);
   }
 
-  public static void levelOrder(Node node){
-      
-    // for level order traversal we use queue data structures 
+  public static void levelOrderLinewise(Node node){
+    // main queue
+    Queue <Node> mq = new ArrayDeque<>();
+    Queue <Node> cq = new ArrayDeque<>();
     
-    Queue <Node> q = new ArrayDeque<>();
-    q.add(node);
+    mq.add(node);
     
-    while (q.size()>0){
-        // remove
-        node = q.remove();
-        //print
+    while(mq.size()>0){
+        // remove 
+        node = mq.remove();
+        // print
         System.out.print(node.data + " ");
-        //add 
+        
         for (Node child : node.children){
-            q.add(child);
+            cq.add(child);
+        
+        }
+        
+        if (mq.size()==0){
+            mq=cq;
+            cq = new ArrayDeque<>();
+            System.out.println();
         }
     }
     
     
-    System.out.print(".");
     
+    
+  
   }
 
   public static void main(String[] args) throws Exception {
@@ -124,7 +132,7 @@ public class Main {
     }
 
     Node root = construct(arr);
-    levelOrder(root);
+    levelOrderLinewise(root);
   }
 
 }
