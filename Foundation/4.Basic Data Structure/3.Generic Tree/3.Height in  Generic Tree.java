@@ -69,6 +69,7 @@ public class Main {
 
   public static int height(Node node) {
     // for base case 
+    // ht = -1 for w.r.t edges , if height is w.r.t nodes initialize ht =0
     int ht = -1;
     
     for (Node child : node.children){
