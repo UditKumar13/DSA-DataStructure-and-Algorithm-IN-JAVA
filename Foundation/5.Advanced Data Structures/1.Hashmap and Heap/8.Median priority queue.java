@@ -23,12 +23,12 @@ public class Main {
       }
       
       
-      if (right.peek() - left.peek() == 2){
+      if (right.size()- left.size() == 2){
           left.add(right.remove());
       }
       
          
-      else if (left.peek() - right.peek() == 2){
+      else if (left.size() - right.size() == 2){
           right.add(left.remove());
       }
     }
