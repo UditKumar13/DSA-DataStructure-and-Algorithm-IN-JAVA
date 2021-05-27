@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     
     public static class Edge{
-        int v;
+        int v; //vertex
         int n; // neighbours 
         Edge(int v, int n){
             this.v = v;
