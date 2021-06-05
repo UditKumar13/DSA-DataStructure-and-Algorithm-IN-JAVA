@@ -63,7 +63,7 @@ public class Main {
               return false;
           }
       }
-      
+      // check 3*3 matrix
       int mat_leftx = x/3 * 3;
       int mat_lefty = y/3 * 3;
       
