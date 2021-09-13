@@ -13,20 +13,28 @@ public class Main {
          
         // step 2 : take the min value amongt the xor pairs of the consecutive numbers
         int min = Integer.MAX_VALUE; // + infinity 
+        
+        ArrayList <String> res = new ArrayList<>();
         for (int i = 0 ; i< arr.length -1; i++){
             int xor  = (arr[i] ^ arr [i+1]) ; 
-            min = Math.min (min,xor); 
-        }
-        
-        // step 3 : to print those pairs 
-        
-        for (int i =0 ; i<arr.length-1; i++){
-            if ((arr[i] ^ arr[i+1] ) == min ){
-                System.out.print(arr[i] + ", " + arr[i+1]);
-                System.out.println() ; 
+            if (xor < min ){
+                min = xor ; 
+                res = new ArrayList<>();
+                res.add(arr[i] + ", " + arr[i+1]);
+            } 
+            
+            else if(xor == min){
+                res.add(arr[i] + ", " + arr[i+1]) ; 
             }
         }
         
+        
+        
+        // step 3 : to print those pairs 
+        
+      for (String uk : res){
+            System.out.println(uk);
+        }
         
         
     }
