@@ -20,9 +20,44 @@ import java.io.*;
 import java.util.*;
 
 
-// Approach 1 : Recursive approach 
+// Approach 2 : Tabulation approach 
 
 public class Main {
+  
+  // tabulation method
+  public static boolean solution2(  String s1, String s2,String s3){
+    
+    boolean [][] dp = new boolean [s1.length()+1][s2.length()+1] ;
+    
+    for (int i=0; i<dp.length; i++){
+      for (int j = 0;j<dp[0].length;j++){
+        
+        if (i==0  && j==0){
+          dp[i][j] = true ; 
+        }
+        
+        
+        else if (i==0){
+          dp[i][j] = s2.charAt(j-1) == s3.charAt(i+j-1) ? dp[i][j-1] : false ;
+        }
+        
+        else if (j==0){
+          dp[i][j] = s1.charAt(i-1) == s3.charAt(i+j-1) ? dp[i-1][j] : false ; 
+        }
+        
+        else {
+          if (s1.charAt(i-1) == s3.charAt(i+j-1)){
+            dp[i][j] = dp[i-1][j];
+          }
+          
+          if (!dp[i][j] && s2.charAt(j-1) == s3.charAt(i+j-1) ){
+            dp[i][j] = dp[i][j-1] ; 
+          }
+        }
+      }
+    }
+    return dp[dp.length-1][dp[0].length-1] ; 
+  }
 
   public static boolean solution(String s1, String s2, String s3,int i, int j ,Boolean [][] dp ) {
     if (i == s1.length () && j == s2.length()){
@@ -70,7 +105,7 @@ public class Main {
       return ; 
     }
     
-    System.out.println(solution(s1, s2, s3,0,0, new Boolean [s1.length() + 1][s2.length() + 1]));
+    System.out.println(solution2(s1, s2, s3));
   }
 
 }
